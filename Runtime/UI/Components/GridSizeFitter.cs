@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace MewtonGames.UI.Components
 {
-    [RequireComponent(typeof(RectTransform))] [RequireComponent(typeof(GridLayoutGroup))] [AddComponentMenu("MewtonGames/Modules/UI/Components/GridSizeFitter")]
+    [RequireComponent(typeof(RectTransform))] [RequireComponent(typeof(GridLayoutGroup))] [AddComponentMenu("MewtonGames/UI/Components/GridSizeFitter")]
     public class GridSizeFitter : MonoBehaviour
     {
         [SerializeField] private bool _fitOnAwake;

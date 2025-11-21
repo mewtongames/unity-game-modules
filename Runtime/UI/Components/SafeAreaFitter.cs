@@ -2,7 +2,7 @@
 
 namespace MewtonGames.UI.Components
 {
-    [RequireComponent(typeof(RectTransform))] [AddComponentMenu("MewtonGames/Modules/UI/Components/SafeAreaFitter")]
+    [RequireComponent(typeof(RectTransform))] [AddComponentMenu("MewtonGames/UI/Components/SafeAreaFitter")]
     public class SafeAreaFitter : MonoBehaviour
     {
         [SerializeField] private bool _fitOnAwake;
