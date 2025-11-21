@@ -1,0 +1,15 @@
+{
+    "name": "com.mewtongames.modules",
+    "version": "1.0.0",
+    "displayName": "Mewton Games Modules",
+    "description": "A collection of reusable game modules for Unity",
+    "unity": "2022.3",
+    "author": {
+        "name": "Mewton Games"
+    },
+    "keywords": [
+        "modules",
+        "utilities",
+        "helpers"
+    ]
+}
