@@ -1,7 +1,9 @@
 {
     "name": "MewtonGames.Modules.Runtime",
     "rootNamespace": "MewtonGames",
-    "references": [],
+    "references": [
+        "Unity.TextMeshPro"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
