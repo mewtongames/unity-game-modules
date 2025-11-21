@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace MewtonGames.Modules.Localization.Providers
+namespace MewtonGames.Localization.Providers
 {
     public class AddressablesLocalizationProvider : ILocalizationProvider
     {

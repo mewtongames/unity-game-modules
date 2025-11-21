@@ -37,7 +37,7 @@ namespace MewtonGames.Localization
                 onComplete?.Invoke();
             });
         }
-        
+
         public void SetLanguage(SystemLanguage language)
         {
             currentLanguage = language;

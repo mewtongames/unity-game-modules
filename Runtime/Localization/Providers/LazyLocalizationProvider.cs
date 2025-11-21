@@ -10,7 +10,14 @@ namespace MewtonGames.Localization.Providers
     public class LazyLocalizationProvider : ScriptableObject, ILocalizationProvider
     {
         [SerializeField] private List<LocalizationReference> _localizations;
-        
+
+        private IJSONConverter _jsonConverter;
+
+        public void SetJSONConverter(IJSONConverter jsonConverter)
+        {
+            _jsonConverter = jsonConverter;
+        }
+
         public void LoadLocales(SystemLanguage language, SystemLanguage defaultLanguage, Action<Dictionary<string, string>> onComplete)
         {
             var textAssetReference = _localizations.FirstOrDefault(r => r.id == LocalizationHelper.GetLanguageCode(language));
@@ -19,8 +26,7 @@ namespace MewtonGames.Localization.Providers
                 textAssetReference = _localizations.FirstOrDefault(r => r.id == LocalizationHelper.GetLanguageCode(defaultLanguage));
             }
 
-            var jsonConverter = new NewtonSoftJSONConverter();
-            var locales = jsonConverter.DeserializeObject<Dictionary<string, string>>(textAssetReference.reference.asset.text);
+            var locales = _jsonConverter.DeserializeObject<Dictionary<string, string>>(textAssetReference.reference.asset.text);
             onComplete?.Invoke(locales);
         }
     }
