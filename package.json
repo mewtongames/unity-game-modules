@@ -11,8 +11,5 @@
         "modules",
         "utilities",
         "helpers"
-    ],
-    "dependencies": {
-        "com.playgama.bridge": "https://github.com/playgama/bridge-unity.git#v1.27.0"
-    }
+    ]
 }

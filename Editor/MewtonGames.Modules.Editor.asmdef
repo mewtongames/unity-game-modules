@@ -2,7 +2,8 @@
     "name": "MewtonGames.Modules.Editor",
     "rootNamespace": "MewtonGames.Editor",
     "references": [
-        "MewtonGames.Modules.Runtime"
+        "MewtonGames.Modules.Runtime",
+        "Playgama.Bridge"
     ],
     "includePlatforms": [
         "Editor"

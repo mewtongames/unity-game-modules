@@ -2,7 +2,8 @@
     "name": "MewtonGames.Modules.Runtime",
     "rootNamespace": "MewtonGames",
     "references": [
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Playgama.Bridge"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
