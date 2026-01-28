@@ -124,6 +124,18 @@ namespace MewtonGames.Advertisement
 
         private void OnRewardedStateChanged(RewardedState state)
         {
+            if (rewardedState == RewardedState.Closed)
+            {
+                if (_timerToNextInterstitial == null)
+                {
+                    _timerToNextInterstitial = _timeModule.Schedule(_minDelayBetweenInterstitial, true);
+                }
+                else
+                {
+                    _timerToNextInterstitial.Restart();
+                }
+            }
+
             rewardedState = state;
             rewardedStateChanged?.Invoke(rewardedState);
         }
