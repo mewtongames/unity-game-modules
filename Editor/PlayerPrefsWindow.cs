@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MewtonGames.DataStorage.Providers;
+using MewtonGames.DataStorage;
 using UnityEditor;
 using UnityEngine;
 
