@@ -8,7 +8,7 @@ namespace MewtonGames.Editor
     {
         private Vector2 _scrollPosition;
 
-        [MenuItem("Window/Scenes")]
+        [MenuItem("Mewton Games/Scenes")]
         public static void ShowWindow()
         {
             var window = GetWindow<ScenesWindow>("Scenes");

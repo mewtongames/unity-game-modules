@@ -16,7 +16,7 @@ namespace MewtonGames.Editor
         private bool _isUnsavedChangesExist;
 
 
-        [MenuItem("Window/Define Symbols")]
+        [MenuItem("Mewton Games/Define Symbols")]
         public static void ShowWindow()
         {
             var window = GetWindow<DefineSymbolsWindow>("Define Symbols");

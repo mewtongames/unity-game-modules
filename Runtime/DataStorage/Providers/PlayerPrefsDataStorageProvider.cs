@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace MewtonGames.DataStorage.Providers
 {
@@ -8,27 +7,27 @@ namespace MewtonGames.DataStorage.Providers
     {
         public void Get(string key, Action<string> onComplete)
         {
-            var value = PlayerPrefs.GetString(key, null);
+            var value = PlayerPrefsWrapper.GetString(key, null);
             onComplete?.Invoke(value);
         }
 
         public void Get(List<string> keys, Action<List<string>> onComplete)
         {
             var values = new List<string>(keys.Count);
-            
+
             foreach (var key in keys)
             {
-                var value = PlayerPrefs.GetString(key, null);
+                var value = PlayerPrefsWrapper.GetString(key, null);
                 values.Add(value);
             }
-            
+
             onComplete?.Invoke(values);
         }
 
         public void Set(string key, string value, Action onComplete = null)
         {
-            PlayerPrefs.SetString(key, value);
-            PlayerPrefs.Save();
+            PlayerPrefsWrapper.SetString(key, value);
+            PlayerPrefsWrapper.Save();
             onComplete?.Invoke();
         }
 
@@ -38,17 +37,17 @@ namespace MewtonGames.DataStorage.Providers
             {
                 var key = keys[i];
                 var value = values[i];
-                PlayerPrefs.SetString(key, value);
+                PlayerPrefsWrapper.SetString(key, value);
             }
 
-            PlayerPrefs.Save();
+            PlayerPrefsWrapper.Save();
             onComplete?.Invoke();
         }
 
         public void Delete(string key, Action onComplete = null)
         {
-            PlayerPrefs.DeleteKey(key);
-            PlayerPrefs.Save();
+            PlayerPrefsWrapper.DeleteKey(key);
+            PlayerPrefsWrapper.Save();
             onComplete?.Invoke();
         }
 
@@ -56,10 +55,10 @@ namespace MewtonGames.DataStorage.Providers
         {
             foreach (var key in keys)
             {
-                PlayerPrefs.DeleteKey(key);
+                PlayerPrefsWrapper.DeleteKey(key);
             }
-            
-            PlayerPrefs.Save();
+
+            PlayerPrefsWrapper.Save();
             onComplete?.Invoke();
         }
     }
