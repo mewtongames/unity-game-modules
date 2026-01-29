@@ -9,7 +9,7 @@ namespace MewtonGames.DataStorage
     public static class PlayerPrefsWrapper
     {
         private const string _keysFileName = "PlayerPrefsKeys";
-        private const string _keysFileAssetPath = $"Assets/{_keysFileName}.txt";
+        private const string _keysFileAssetPath = "Assets/PlayerPrefsKeys.txt";
 
         private static HashSet<string> _registeredKeys;
 
