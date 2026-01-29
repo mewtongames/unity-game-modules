@@ -7,7 +7,7 @@ namespace MewtonGames.Payments.Providers
 {
     public class WebPaymentsProvider : IPaymentsProvider
     {
-        public bool isPaymentsSupported => true;
+        public bool isPaymentsSupported => Bridge.payments.isSupported;
         public bool isInitialized { get; private set; }
         
         public void Initialize(List<Product> settings, Action onComplete = null)
@@ -18,6 +18,11 @@ namespace MewtonGames.Payments.Providers
 
         public void GetCatalog(Action<List<Product>> onComplete)
         {
+            if (!isPaymentsSupported) {
+                onComplete?.Invoke(new List<Product>());
+                return;
+            }
+
             Bridge.payments.GetCatalog((success, catalog) =>
             {
                 var products = new List<Product>();
@@ -39,6 +44,11 @@ namespace MewtonGames.Payments.Providers
 
         public void GetPurchases(Action<List<Product>> onComplete)
         {
+            if (!isPaymentsSupported) {
+                onComplete?.Invoke(new List<Product>());
+                return;
+            }
+
             Bridge.payments.GetPurchases((success, purchases) =>
             {
                 var products = new List<Product>();
@@ -60,6 +70,11 @@ namespace MewtonGames.Payments.Providers
 
         public void Purchase(string id, Action<bool> onComplete)
         {
+            if (!isPaymentsSupported) {
+                onComplete?.Invoke(false);
+                return;
+            }
+
             Bridge.payments.Purchase(id, (success, purchase) =>
             {
                 onComplete?.Invoke(success);
@@ -68,6 +83,11 @@ namespace MewtonGames.Payments.Providers
 
         public void Consume(string id, Action<bool> onComplete)
         {
+            if (!isPaymentsSupported) {
+                onComplete?.Invoke(false);
+                return;
+            }
+
             Bridge.payments.ConsumePurchase(id, (success, purchase) =>
             {
                 onComplete?.Invoke(success);
