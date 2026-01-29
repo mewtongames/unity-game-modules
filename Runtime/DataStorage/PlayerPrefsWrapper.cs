@@ -17,7 +17,8 @@ namespace MewtonGames.DataStorage
         public static string GetString(string key, string defaultValue = null)
         {
             RegisterKey(key);
-            return PlayerPrefs.GetString(key, defaultValue);
+            var value = PlayerPrefs.GetString(key, null);
+            return string.IsNullOrEmpty(value) ? defaultValue : value;
         }
 
         public static int GetInt(string key, int defaultValue = 0)
